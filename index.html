@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultimate Hostel</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- =========================
+     NAVIGATION BAR
+    ========================= -->
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="index.html">Ultimate Hostel</a>
+          </div>
+
+          <!-- Navigation Links -->
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="rooms.html">Gallery</a></li>
+            <li><a href="facilities.html">Facilities</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="https://www.studentroombook.com/hostels/ultimate-hostel-28" class="booking-btn">Book Now</a></li>
+          </ul>
+
+          <!-- Mobile Menu Icon -->
+          <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    
+<!-- =========================
+     HERO SECTION
+========================= -->
+<section class="hero-slider">
+  <!-- Slide 1 -->
+  <div class="slide active" style="background-image: url('images/WhatsApp\ Image\ 2025-10-18\ at\ 14.23.00_28da0d29.jpg');">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <i class="fas fa-hotel hero-icon"></i>
+      <h1>Welcome to Ultimate Hostel</h1>
+      <p>Experience comfort, convenience, and community — all in one place.</p>
+      <a href="#booking" class="hero-btn">Start Booking</a>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide" style="background-image: url('images/police2.jpg');">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <i class="fas fa-shield-alt hero-icon"></i>
+      <h1>Your Safety is Our Priority</h1>
+      <p>24/7 campus security ensures peace of mind during your stay.</p>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide" style="background-image: url('images/sitting.jpg');">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <i class="fas fa-users hero-icon"></i>
+      <h1>Join Our Vibrant Student Community</h1>
+      <p>Connect, learn, and grow together at Ultimate Hostel.</p>
+    </div>
+  </div>
+
+  <!-- Dots Navigation -->
+  <div class="dots"></div>
+</section>
+
+
+<!-- =========================
+ABOUT SECTION
+========================= -->
+<section class="about" data-aos="fade-up" data-aos-delay="200">
+  <div class="about-container">
+        <div class="about-image">
+      <img src="images/about.jpg" alt="About Ultimate Hostel" />
+    </div>
+
+    <div class="about-text">
+      <h2>About <span>Ultimate Hostel</span></h2>
+      <p>
+        Ultimate Hostel is situated at Bomso and is committed to providing a very conducive and 
+        affordable accommodation to students of Kwame Nkrumah University of Science and Technology 
+        and beyond. Our Hostel facilities meet the University accommodation standards and have moderate
+         room prices with easy access to KNUST campus at any given time on foot. The hostel has 24-hour 
+         protection for students since Police Station is located besides it, to check safety, comfort and 
+         satisfaction of students. 
+      </p>
+      <a href="contact.html" class="about-btn">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section class="why-choose-us" data-aos="slide-right" data-aos-delay="200">
+  <div class="container">
+    <h2>Why Choose Ultimate Hostel</h2>
+    <p class="subtitle">We provide a safe, comfortable, and community-driven environment for every student.</p>
+
+    <div class="why-features">
+      <div class="feature">
+        <i class="fas fa-shield-alt"></i>
+        <h3>24/7 Security</h3>
+        <p>Round-the-clock safety and monitoring to keep you secure always.</p>
+      </div>
+
+      <div class="feature">
+        <i class="fas fa-users"></i>
+        <h3>Happy Students 300+</h3>
+        <p>Join a friendly community of over 300 students living and thriving together.</p>
+      </div>
+
+      <div class="feature">
+        <i class="fas fa-headset"></i>
+        <h3>24/7 Support</h3>
+        <p>Always available to assist with maintenance, bookings, and student needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms-section" data-aos="fade-up" data-aos-delay="200"> 
+  <h2 class="section-title">Available Rooms</h2>
+
+  <div class="rooms-slider-container">
+    <button class="room-btn prev">&#10094;</button>
+
+    <div class="rooms-slider">
+      <div class="room-card office1">
+        <div class="overlay">
+          <h3>Office Block</h3>
+          <p>2 in a room with balcony</p>
+        </div>
+      </div>
+
+      <div class="room-card office2">
+        <div class="overlay">
+          <h3>Office Block</h3>
+          <p>1 in a room with no balcony</p>
+        </div>
+      </div>
+
+      <div class="room-card annex1">
+        <div class="overlay">
+          <h3>New Annex Block</h3>
+          <p>2 in a room with no balcony</p>
+        </div>
+      </div>
+
+      <div class="room-card annex2">
+        <div class="overlay">
+          <h3>Main Block</h3>
+          <p>2 in a room with no balcony</p>
+        </div>
+      </div>
+
+      <div class="room-card newblock">
+        <div class="overlay">
+          <h3>New Block</h3>
+          <p>2 in a room</p>
+        </div>
+      </div>
+
+      <div class="room-card mainblock">
+        <div class="overlay">
+          <h3>Main Block</h3>
+          <p>1 in a room</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="room-btn next">&#10095;</button>
+  </div>
+
+  <!-- Browse Rooms Button -->
+  <div class="browse-rooms">
+    <a href="rooms.html" class="browse-btn">Browse All Rooms</a>
+  </div>
+</section>
+
+
+
+<section class="booking-banner"  data-aos="fade-up" data>
+  <div class="booking-overlay">
+    <div class="booking-content">
+      <h2>Ready to Book Your Stay?</h2>
+      <p>
+        Secure your spot at our hostel with just one click. You’ll be redirected
+        to our online booking platform.
+      </p>
+
+      <a href="https://www.studentroombook.com/hostels/ultimate-hostel-28" target="_blank" class="booking-btn">
+        Proceed to Booking
+      </a>
+
+      <div class="booking-features">
+        <div class="feature-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>24/7 Security</span>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-users"></i>
+          <span>Happy Students 300+</span>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-headset"></i>
+          <span>24/7 Support</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="#">Ultimate Hostel</a>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Rooms</a></li>
+        <li><a href="#">Booking</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p><strong>Address:</strong> Close to Bomso Clinic, Kumasi</p>
+      <p><strong>Phone:</strong> +233 24 423 4432</p>
+      <p><strong>Email:</strong> ultimatehostel48@gmail.com</p>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Ultimate Hostel. All Rights Reserved.</p>
+  </div>
+</footer>
+ <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+ <script src="index.js"></script>
+</body>
+</html>
