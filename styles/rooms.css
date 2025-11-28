@@ -121,8 +121,8 @@ header {
 }
 
 .menu-toggle span {
-  width: 25px;
-  height: 3px;
+  width: 28px;
+  height: 4.5px;
   background: #f7c04a;
   border-radius: 2px;
   transition: all 0.4s ease;
@@ -318,6 +318,7 @@ body {
 .tab-content {
     display: none;
     padding: 80px 0;
+    background: #f1efef55;
 }
 
 .tab-content.active {
@@ -327,30 +328,31 @@ body {
 /* Photos Grid */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0 10px; /* Added side padding for mobile */
 }
 
 .gallery-item {
     position: relative;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     cursor: pointer;
-    aspect-ratio: 3/3;
+    aspect-ratio: 3/3; /* Changed to 4/3 for better proportions */
     background: #f8f9fa;
 }
 
 .gallery-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ensure images fill container properly */
     transition: transform 0.4s ease;
 }
 
@@ -364,7 +366,7 @@ body {
     left: 0;
     right: 0;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    padding: 25px 15px 15px;
+    padding: 20px 12px 12px;
     transform: translateY(10px);
     opacity: 0;
     transition: all 0.3s ease;
@@ -377,9 +379,57 @@ body {
 
 .image-caption {
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 0 15px; /* More padding on mobile */
+    }
+    
+    .gallery-item {
+        border-radius: 8px;
+        aspect-ratio: 3/3; /* Maintain aspect ratio */
+    }
+    
+    .gallery-item:hover {
+        transform: translateY(-3px); /* Less lift on mobile */
+    }
+    
+    .image-overlay {
+        padding: 15px 10px 10px;
+    }
+    
+    .image-caption {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+        gap: 12px;
+        padding: 0 10px;
+    }
+    
+    .gallery-item {
+        aspect-ratio: 4/3;
+    }
+    
+    .image-overlay {
+        padding: 12px 8px 8px;
+    }
+    
+    .image-caption {
+        font-size: 1rem;
+    }
+}
+
 
 /* Videos Grid */
 .videos-grid {
@@ -414,7 +464,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 80%;
     height: 100%;
     border: none;
 }
@@ -541,6 +591,7 @@ body {
     color: #f7c04a;
 }
 
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .gallery-hero {
@@ -567,8 +618,8 @@ body {
     }
     
     .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 55px;
     }
     
     .videos-grid {
@@ -692,6 +743,54 @@ body {
 .video-wrapper video::-webkit-media-controls-play-button {
     background-color: #f7c04a;
     border-radius: 50%;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .videos-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+        padding: 0 15px; /* Add some side padding */
+    }
+    
+    .video-item {
+        border-radius: 10px;
+    }
+    
+    .video-wrapper {
+        border-radius: 10px 10px 0 0;
+        aspect-ratio: 16/9; /* Maintain widescreen aspect ratio */
+    }
+    
+    .video-wrapper video {
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .video-play-overlay i {
+        font-size: 2.5rem; /* Smaller play button on mobile */
+    }
+    
+    .video-info {
+        padding: 15px;
+    }
+    
+    .video-info h3 {
+        font-size: 1.2rem;
+        margin-bottom: 6px;
+    }
+    
+    .video-info p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .videos-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+        gap: 20px;
+    }
 }
 
 /* Minimal Parallax Call to Action */
