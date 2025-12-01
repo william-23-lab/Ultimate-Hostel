@@ -9,36 +9,81 @@ menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");   // Toggle mobile menu
 });
 
-// =====================
-// ✅ ROOMS SLIDER (AUTO + MANUAL)
-// =====================
-const slider = document.querySelector(".rooms-slider");
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
-let index = 0;
-
-function slideRooms() {
-  const cards = document.querySelectorAll(".room-card").length;
-  const visible = window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : window.innerWidth <= 1024 ? 3 : 4;
-  const maxIndex = cards - visible;
-  index = (index + 1) % (maxIndex + 1);
-  slider.style.transform = `translateX(-${index * (100 / visible)}%)`;
-}
-
-let autoSlide = setInterval(slideRooms, 4000);
-
-nextBtn.addEventListener("click", () => {
-  clearInterval(autoSlide);
-  slideRooms();
-  autoSlide = setInterval(slideRooms, 4000);
-});
-
-prevBtn.addEventListener("click", () => {
-  clearInterval(autoSlide);
-  index = index === 0 ? 0 : index - 1;
-  const visible = window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : window.innerWidth <= 1024 ? 3 : 4;
-  slider.style.transform = `translateX(-${index * (100 / visible)}%)`;
-  autoSlide = setInterval(slideRooms, 4000);
+// Add this to your existing JavaScript file
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.rooms-slider-modern');
+    const prevBtn = document.querySelector('.room-btn-modern.prev');
+    const nextBtn = document.querySelector('.room-btn-modern.next');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    let currentIndex = 0;
+    const cardWidth = document.querySelector('.room-card-modern').offsetWidth + 30; // width + gap
+    
+    function updateSlider() {
+        slider.scrollTo({
+            left: currentIndex * cardWidth,
+            behavior: 'smooth'
+        });
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
+    // Previous button
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = Math.floor(slider.scrollWidth / cardWidth) - 1;
+        }
+        updateSlider();
+    });
+    
+    // Next button
+    nextBtn.addEventListener('click', () => {
+        const maxIndex = Math.floor(slider.scrollWidth / cardWidth) - 1;
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        updateSlider();
+    });
+    
+    // Indicator clicks
+    indicators.forEach(indicator => {
+        indicator.addEventListener('click', function() {
+            currentIndex = parseInt(this.getAttribute('data-index'));
+            updateSlider();
+        });
+    });
+    
+    // Auto slide (optional)
+    let autoSlide = setInterval(() => {
+        const maxIndex = Math.floor(slider.scrollWidth / cardWidth) - 1;
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        updateSlider();
+    }, 5000);
+    
+    // Pause auto slide on hover
+    slider.addEventListener('mouseenter', () => clearInterval(autoSlide));
+    slider.addEventListener('mouseleave', () => {
+        autoSlide = setInterval(() => {
+            const maxIndex = Math.floor(slider.scrollWidth / cardWidth) - 1;
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateSlider();
+        }, 5000);
+    });
 });
 
 // =====================
